@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <span>Focusflow</span>
+        </div>
+        <div class="section1">
+            <h1>Your Task</h1>
+            <ul class="tasks">
+
+            </ul>
+            <input id="textinput" type="text" placeholder="+ Add new task">
+        </div>
+        <div class="section2">
+            <div class="header2">
+                <img src="resources/time-left.png" style="filter: invert(0.8);" height="40" alt="">
+                <h1>Focus timer</h1>
+            </div>
+            <div class="timer">
+                <h1>
+                    <span contenteditable="true" id="min">30</span>:<span contenteditable="true" id="sec">00</span>
+                </h1>
+            </div>
+            <button id="timerstartbtn">Start</button>
+            <button id="timerbreakbtn">shortbreak</button>
+        </div>
+        <div class="footer">
+            <span>Built by Satyabrata</span>
+            <a href="https://github.com/Satya0927a?tab=repositories" target="_blank">Github</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

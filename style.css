@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body{
+
+
+    background: linear-gradient(to top right, #3E5690, #93698A);
+    background-attachment: fixed;
+    color: #d7d9d9;
+    font-family: "Oswald", sans-serif;
+    
+}
+.container{
+    
+    background-color: #1E2731;
+    padding: 2rem;
+    width: 70%;
+    margin: auto;
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2rem auto 2rem;
+    gap: 2rem;
+    border-radius: 23px;
+    box-shadow: 14px 11px 20px 0px #00000080;
+}
+.header{
+    /* background-color: red; */
+    grid-area: 1 / 1 / 2 / 3;
+    font-size: 2rem;
+}
+.section1{
+    /* background-color: blue; */
+    background-color: #232D37;
+    padding: 3rem;
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    gap: 1rem;
+    border-radius: 16px;
+
+}
+.section1 ul li{
+    opacity: 0;
+    list-style: none;
+    font-weight: 300;
+    transform: translateY(10px);
+    transition: all 1s ease;
+}
+.section1 ul li:not(.newtask){
+    opacity: 1;
+    transform: translateY(0);
+}
+.section1 h1{
+    font-size: 3rem;
+}
+/* .task input[type="checkbox"]{
+
+} */
+#textinput{
+    padding: 1rem;
+    font-size: 1.2rem;
+    background-color: #2B3540;
+    border: none;
+
+}
+#textinput::placeholder{
+    color: rgb(203, 203, 203);
+}
+.section2{
+    /* background-color: aqua; */
+
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: #232D37;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 1rem;
+    border-radius: 16px;
+}
+.header2{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
+    gap: 1rem;
+}
+.header2 h1{
+    font-size: 3rem;
+
+}
+.timer h1{
+    /* font-size: clamp(1rem, 10vw, 10rem); */
+    font-size: 10rem;
+}
+button{
+    border-radius: 6px;
+    padding: 1rem;
+    width: 30%;
+    /* align-items: center; */
+    align-self: center;
+    background-color: #2B3540;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+}
+.footer{
+    grid-area: 3/1/4/3;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
