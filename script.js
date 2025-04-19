@@ -83,8 +83,8 @@ function timerrun(cycle){
 }
 
 function breaktimeset(){
-    min.textContent = "00";
-    sec.textContent = "20"
+    min.textContent = "05";
+    sec.textContent = "00"
 }
 
 function alarm(){
