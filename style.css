@@ -52,6 +52,7 @@ body{
     display: flex;
     flex-direction: column;
     margin-left: 1.5rem;
+    position: relative;
 }
 .section1 ul li{
     opacity: 0;
@@ -110,6 +111,7 @@ body{
 }
 .timer h1{
     /* font-size: clamp(1rem, 10vw, 10rem); */
+    /* font-size: clamp(5rem, 3.81rem + 5.15vw, 10rem); */
     font-size: 10rem;
 }
 button{
@@ -122,6 +124,9 @@ button{
     border: none;
     font-size: 1.5rem;
     color: white;
+}
+.section2 button{
+    width: 50%;
 }
 .footer{
     grid-area: 3/1/4/3;
@@ -139,4 +144,49 @@ button{
     background-color: #998f8f;
     left: 0px;
     top: 27px;
+}
+
+
+@media only screen and (max-width:1634px){
+    .timer h1{
+        font-size: 5rem;
+    }
+    .section2 button {
+        width: 7rem;
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width:1464px){
+    .section1 h1 {
+        font-size: 2rem;
+    }
+    .header2 h1 {
+        font-size: 2rem;
+    }
+}
+@media only screen and (max-width:1136px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width:430px){
+    .section1 h1 {
+        font-size: 1.5rem;
+    }
+    #textinput{
+        font-size: 1rem;
+    }
+    .header2 h1 {
+        font-size: 1.5rem;
+    }
+    .section1 ul li{
+        font-size: 1rem;
+    }
+    .linethrough::after{
+        top: 12px;
+        height: 2px;
+
+
+    }
 }
