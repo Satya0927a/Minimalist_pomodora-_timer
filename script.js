@@ -5,7 +5,7 @@ txtinp.addEventListener("keypress", (e)=>{
         let li = document.createElement("li")
         let task_no = document.querySelectorAll(".task").length
         li.innerHTML = `<input type="checkbox" name="" id="task${task_no+1}a">
-                    <label for="task${task_no+1}a">${txtinp.value}</label>`
+                    <label class="" for="task${task_no+1}a">${txtinp.value}</label>`
         li.className = `task task${task_no+1} newtask`
         tasks.append(li);
         txtinp.value = "";
@@ -16,7 +16,10 @@ txtinp.addEventListener("keypress", (e)=>{
         })
     }
 })
-
+let task_label = document.querySelectorAll(".task label");
+task_label.addEventListener("click", ()=>{
+    console.log("yes")
+})
 
 //timer
 let timerstartbtn = document.getElementById("timerstartbtn");
