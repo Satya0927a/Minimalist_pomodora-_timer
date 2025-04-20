@@ -1,12 +1,12 @@
 let txtinp = document.getElementById("textinput")
 let tasks = document.querySelector(".tasks")
+
 txtinp.addEventListener("keypress", (e)=>{
     if(e.key == "Enter"){
         let li = document.createElement("li")
         let task_no = document.querySelectorAll(".task").length
-        li.innerHTML = `<input type="checkbox" name="" id="task${task_no+1}a">
-                    <label class="" for="task${task_no+1}a">${txtinp.value}</label>`
-        li.className = `task task${task_no+1} newtask`
+        li.innerHTML = `${txtinp.value}`
+        li.className = `task task${task_no+1} newtask `
         tasks.append(li);
         txtinp.value = "";
 
@@ -16,10 +16,15 @@ txtinp.addEventListener("keypress", (e)=>{
         })
     }
 })
-let task_label = document.querySelectorAll(".task label");
-task_label.addEventListener("click", ()=>{
-    console.log("yes")
+
+tasks.addEventListener("click",(e)=>{
+    if(e.target.tagName.toLowerCase() === "li"){
+        e.target.className = "linethrough"
+        // console.log(e.target.classList)
+        
+    }
 })
+
 
 //timer
 let timerstartbtn = document.getElementById("timerstartbtn");

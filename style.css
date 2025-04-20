@@ -48,12 +48,19 @@ body{
     border-radius: 16px;
 
 }
+.section1 ul{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+}
 .section1 ul li{
     opacity: 0;
-    list-style: none;
+    list-style:decimal;
+    list-style-position: outside;
     font-weight: 300;
     transform: translateY(10px);
     transition: all 1s ease;
+    width: fit-content;
 }
 .section1 ul li:not(.newtask){
     opacity: 1;
@@ -122,4 +129,14 @@ button{
     justify-content: center;
     gap: 1rem;
     font-size: 1.5rem;
+}
+
+.linethrough::after{
+    content: "";
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    background-color: #998f8f;
+    left: 0px;
+    top: 27px;
 }
