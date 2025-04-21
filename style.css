@@ -198,4 +198,7 @@ button{
     .header2 img{
         height: 1.5rem;
     }
+    .footer{
+        font-size: 1rem;
+    }
 }
