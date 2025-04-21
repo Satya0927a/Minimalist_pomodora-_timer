@@ -180,6 +180,9 @@ button{
     .section1 h1 {
         font-size: 1.5rem;
     }
+    .section1 ul{
+        margin-left: 0;
+    }
     #textinput{
         font-size: 1rem;
     }

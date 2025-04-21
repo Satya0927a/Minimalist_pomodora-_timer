@@ -1,8 +1,8 @@
 let txtinp = document.getElementById("textinput")
 let tasks = document.querySelector(".tasks")
 
-txtinp.addEventListener("keypress", (e)=>{
-    if(e.key == "Enter"){
+txtinp.addEventListener("keydown", (e)=>{
+    if(e.key === "Enter"){
         let li = document.createElement("li")
         let task_no = document.querySelectorAll(".task").length
         li.innerHTML = `${txtinp.value}`
