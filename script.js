@@ -1,20 +1,50 @@
+let txtinpform = document.getElementById("submitform")
 let txtinp = document.getElementById("textinput")
 let tasks = document.querySelector(".tasks")
 
-txtinp.addEventListener("keydown", (e)=>{
-    if(e.key === "Enter"){
-        let li = document.createElement("li")
-        let task_no = document.querySelectorAll(".task").length
-        li.innerHTML = `${txtinp.value}`
-        li.className = `task task${task_no+1} newtask `
-        tasks.append(li);
-        txtinp.value = "";
 
-        //smooth animation
-        requestAnimationFrame(()=>{
-            li.classList.remove("newtask");
-        })
+//getting history using localstorage
+if(localStorage.length != 0){
+    for(let i = 0; i<localStorage.length; i++){
+        let li_hist = document.createElement("li")
+        let key = localStorage.key(i)
+        li_hist.innerHTML = `${localStorage.getItem(key)}`
+        li_hist.className = `task task${i+1}`;
+        tasks.append(li_hist);
+        console.log(`${key} ${localStorage.getItem(key)}`)
+        
+        
     }
+}
+//adding element
+txtinpform.addEventListener("submit", (e)=>{
+    e.preventDefault()
+    let li = document.createElement("li")
+    let task_no = document.querySelectorAll(".task").length
+    li.innerHTML = `${txtinp.value}`
+    li.className = `task task${task_no+1} newtask `
+    localStorage.setItem(`task${task_no+1}`,`${txtinp.value}`)
+    tasks.append(li);
+    // console.log("entered")
+    txtinp.value = "";
+
+    //smooth animation
+    requestAnimationFrame(()=>{
+        li.classList.remove("newtask");
+    })
+    
+})
+//deleting tasks
+let deltask = document.getElementById("deltask")
+deltask.addEventListener("click", ()=>{
+    //deleting li items using dom
+    let taskitems = document.querySelectorAll(".tasks li");
+    // localStorage.clear()
+    taskitems.forEach((e)=>{
+        e.remove()
+    })
+    //deleting data from localstorage
+    localStorage.clear()
 })
 
 tasks.addEventListener("click",(e)=>{

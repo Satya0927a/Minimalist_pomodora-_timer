@@ -78,10 +78,13 @@ body{
     font-size: 1.2rem;
     background-color: #2B3540;
     border: none;
-
+    border-radius: 10px;
+    width: -webkit-fill-available;
 }
 #textinput::placeholder{
     color: rgb(203, 203, 203);
+    
+
 }
 .section2{
     /* background-color: aqua; */
@@ -118,7 +121,7 @@ body{
     font-size: 10rem;
 }
 button{
-    border-radius: 6px;
+    border-radius: 10px;
     padding: 1rem;
     width: 30%;
     /* align-items: center; */
@@ -154,6 +157,10 @@ button{
     .timer h1{
         font-size: 5rem;
     }
+    .section1 button {
+        font-size: 1rem;
+        width: 7rem;
+    }
     .section2 button {
         width: 7rem;
         font-size: 1rem;
@@ -181,7 +188,7 @@ button{
         font-size: 1.5rem;
     }
     .section1 ul{
-        margin-left: 0;
+        margin-left: 1rem;
     }
     #textinput{
         font-size: 1rem;
@@ -195,8 +202,6 @@ button{
     .linethrough::after{
         top: 12px;
         height: 2px;
-
-
     }
     .header2 img{
         height: 1.5rem;
