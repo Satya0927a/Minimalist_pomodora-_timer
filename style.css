@@ -109,6 +109,9 @@ body{
     font-size: 3rem;
 
 }
+.header2 img{
+    height: 3rem;
+}
 .timer h1{
     /* font-size: clamp(1rem, 10vw, 10rem); */
     /* font-size: clamp(5rem, 3.81rem + 5.15vw, 10rem); */
@@ -171,6 +174,9 @@ button{
     }
 }
 @media only screen and (max-width:430px){
+    .timer h1{
+        font-size: 3rem
+    }
     .section1 h1 {
         font-size: 1.5rem;
     }
@@ -188,5 +194,8 @@ button{
         height: 2px;
 
 
+    }
+    .header2 img{
+        height: 1.5rem;
     }
 }
