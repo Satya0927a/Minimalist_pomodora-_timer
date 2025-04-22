@@ -1,7 +1,7 @@
 {
     "name": "Todo list",
     "short_name": "App",
-    "start_url": ".",
+    "start_url": "/Minimalist_pomodora-_timer/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
