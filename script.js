@@ -5,33 +5,33 @@ let tasks = document.querySelector(".tasks")
 
 //getting history using localstorage
 if(localStorage.length != 0){
+
+    //sorting the key
+    let task_arr = [];
     for(let i = 0; i<localStorage.length; i++){
-        let li_hist = document.createElement("li")
-        let key = localStorage.key(i)
-        li_hist.innerHTML = `${localStorage.getItem(key)}`
-        li_hist.className = `task task${i+1}`;
-        tasks.append(li_hist);
-        console.log(`${key} ${localStorage.getItem(key)}`)
-        
-        
+        task_arr.push(localStorage.key(i))
     }
+    task_arr.sort()
+    //adding the history using sorted keys
+    for(let i = 0; i<task_arr.length; i++){
+        let setclass = `task task${i+1}`;
+        creattaskelement(localStorage.getItem(task_arr[i]),setclass)
+    }
+    //debug
+    // console.log(localStorage)
 }
+
 //adding element
 txtinpform.addEventListener("submit", (e)=>{
-    e.preventDefault()
-    let li = document.createElement("li")
+    e.preventDefault() //preventing reload after submit
     let task_no = document.querySelectorAll(".task").length
-    li.innerHTML = `${txtinp.value}`
-    li.className = `task task${task_no+1} newtask `
+    let setclass = `task task${task_no+1} newtask`
+    creattaskelement(txtinp.value,setclass)
     localStorage.setItem(`task${task_no+1}`,`${txtinp.value}`)
-    tasks.append(li);
     // console.log("entered")
     txtinp.value = "";
 
-    //smooth animation
-    requestAnimationFrame(()=>{
-        li.classList.remove("newtask");
-    })
+
     
 })
 //deleting tasks
@@ -128,4 +128,16 @@ function breaktimeset(){
 function alarm(){
     let audio = new Audio("resources/output.mp3")
     audio.play()
+}
+
+//function that creates elements and 
+function creattaskelement(taskcontent,classname){
+    let li = document.createElement("li")
+    li.innerHTML = taskcontent;
+    li.className = `${classname}`
+    tasks.append(li);
+
+    requestAnimationFrame(()=>{
+        li.classList.remove("newtask");
+    })
 }
